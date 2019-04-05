@@ -22,7 +22,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
     	http.authorizeRequests()
 		.antMatchers(PERMIT_PATH).permitAll().anyRequest().authenticated().and().formLogin()
-		.loginPage("/entrar").defaultSuccessUrl("/home", true).permitAll().and().logout().logoutUrl("/logout").permitAll();
+		.loginPage("/login").defaultSuccessUrl("/home", true).permitAll().and().logout().logoutUrl("/logout").permitAll();
 
     }
 

@@ -6,12 +6,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 @RestController
-@RequestMapping("/entrar")
+@RequestMapping("/login")
 public class InitController  {
 	
 	@GetMapping
 	public ModelAndView inicia() {
-		return new ModelAndView ("entrar");
+		return new ModelAndView ("login");
 	}
 
 }
