@@ -1,14 +1,14 @@
-package com.config;
+package com.eventos.config;
 
-import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.core.userdetails.User;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UserDetailsService;
-import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import com.eventos.service.UsuarioService;
 
 @Configuration
 @EnableWebSecurity
@@ -17,6 +17,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	private final static String[] PERMIT_PATH =  {"/resources/**", "/css/**","/fonts/**",
 			"/img/**","/js/**","/favicon.png","/esqueci-minha-senha","/cadastrar", "/recuperaSenha"};
 
+	@Autowired
+	private UsuarioService usuarioService;
 	
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -26,16 +28,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     }
 
-    @Bean
-    @Override
-    public UserDetailsService userDetailsService() {
-        UserDetails user =
-             User.withDefaultPasswordEncoder()
-                .username("user")
-                .password("password")
-                .roles("USER")
-                .build();
 
-        return new InMemoryUserDetailsManager(user);
+    
+    @Override
+    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        
+		auth.userDetailsService(usuarioService).passwordEncoder(new BCryptPasswordEncoder());
     }
 }
