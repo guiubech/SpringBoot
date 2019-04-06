@@ -30,4 +30,5 @@ public class UsuarioService implements UserDetailsService {
 
 		return new UsuarioSecurityModel(usuario);
 	}
+	
 }
