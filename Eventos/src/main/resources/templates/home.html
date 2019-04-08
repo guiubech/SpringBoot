@@ -1,28 +1,29 @@
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Animated Login</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <form class="box C " action="home.html" method="get" >
-            <h1>User</h1>
-            <table>
-                <tr>
-                    <th>ID</th>
-                    <th>NAME</th>
-                    <th>EMAIL</th>
-                    <th>Action</th>
-                </tr>
-                <tr>
-                    <td>0</td>
-                    <td>Guilherme</td>
-                    <td>guiubech@hotmail.com</td>
-                </tr>
-            </table>    
-            <a href="signIn.html">
-            <input type="button" name="" value="Sign in">
-            </a>    
-        </form>
-    </body>
-</html>
+ <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" th:href="@{style.css}" />
+
+</head>
+
+<body>
+    
+    <div class="sidenav">
+        <img src="logo.jpg" id="logo"/>
+        <a href="home">Run Away</a> 
+        <a href="about">Sobre RunAway</a>
+        <a href="calendario">Calendário </a>
+        <a href="inscricao">Inscrição</a>
+        <a href="login">Logout</a>
+    </div>
+    <div class="leftbar"></div>
+    
+    <!-- Aqui é a página principal -->
+
+    <div class="main">
+        <img src="background.jpeg" id="back"/>
+    </div>
+
+</body>
+</html> 
