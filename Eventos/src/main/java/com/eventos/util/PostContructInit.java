@@ -25,11 +25,12 @@ public class PostContructInit {
     	Usuario usuario = new Usuario(); 
     	usuario.setAtivo(true);
     	usuario.setLogin("admin");
-    	usuario.setNome("Davi");
+    	usuario.setNome("Guilherme");
     	usuario.setPerfil(Perfil.ADMIN);
     	usuario.setSenha(new BCryptPasswordEncoder().encode("123"));
     	usuario.setEmail("guiubech@hotmail.com");
     	usuario.setSobrenome("Bechuate");
+    	usuario.setDataNesc("08/03/1989");
     	usuarioRepository.save(usuario);
     	
     	

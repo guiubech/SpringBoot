@@ -27,10 +27,12 @@ public class Usuario {
 	
 	@NotBlank(message="Favor, informar o sobrenome.")
 	private String sobrenome;
+	
 	private String login;
 	
 	@NotBlank(message="Favor, informar a senha.")
 	private String senha;
+	
 	private boolean ativo;
 	
 	@Enumerated(EnumType.STRING)
@@ -44,6 +46,8 @@ public class Usuario {
 	private Endereco endereco;
 	private String sobre;
 	private String status;
+	
+	private String dataNesc;
 	
 	
 	public Long getId() {
@@ -111,6 +115,12 @@ public class Usuario {
 	}
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	public String getDataNesc() {
+		return dataNesc;
+	}
+	public void setDataNesc(String dataNesc) {
+		this.dataNesc = dataNesc;
 	}
 	
 	

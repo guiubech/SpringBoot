@@ -19,26 +19,26 @@
     <!-- Aqui é a página principal -->
 
     <div class="main">
-       <form method="get" action="login.html">
+       <form method="post" th:action="@{/register}" th:object="${usuario}">
 
             <div class="cadastro">
                 <label id="campo" for="username">Usuário</label><br>
-                <input   type="text" placeholder="Usuário" name="username" required>
+                <input type="text" placeholder="Usuário" th:field="*{login}" required>
                 <br>
                 <label id="campo" for="name">Nome</label><br>
-                <input type="text" placeholder="Nome" name="name" required>
+                <input type="text" placeholder="Nome" th:field="*{nome}" required>
                 <br>
                 <label id="campo" for="lastname">Sobrenome</label><br>
-                <input type="text" placeholder="Sobrenome" name="lastname" required>
+                <input type="text" placeholder="Sobrenome" th:field="*{sobrenome}" required>
                 <br>
                 <label id="campo" for="password">Senha</label><br>
-                <input type="text" placeholder="Senha" name="password" required>
+                <input type="text" placeholder="Senha" th:field="*{senha}" required>
                 <br>
                 <label id="campo" for="email">E-mail</label> <br>
-                <input type="email" placeholder="e-mail" required>
+                <input type="email" placeholder="e-mail" th:field="*{email}" required>
                 <br>
                 <label id="campo" for="nascimento">Nascimento</label><br>
-                <input type="date" placeholder="Data de Nascimento" required>
+                <input type="date" placeholder="Data de Nascimento" th:field="*{nascimento}" required>
                 <br><br>
                 <button type="submit"> Cadastrar </button>
                 <button type="reset"> Reset </button>
