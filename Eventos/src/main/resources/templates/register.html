@@ -10,10 +10,8 @@
     
     <div class="sidenav">
        <img src="img/logo.jpg" id="logo"/>
-        <a href="home">Run Away</a> 
+        <a href="login">Login</a> 
         <a href="about">Sobre RunAway</a>
-        <a href="calendario">Calendário </a>
-        <a href="inscricao">Inscrição</a>
         <a href="login">Logout</a>
     </div>
     <div class="leftbar"></div>
@@ -21,38 +19,32 @@
     <!-- Aqui é a página principal -->
 
     <div class="main">
-       <form method="get" action="final.html">
+       <form method="get" action="login.html">
 
             <div class="cadastro">
+                <label id="campo" for="username">Usuário</label><br>
+                <input   type="text" placeholder="Usuário" name="username" required>
+                <br>
                 <label id="campo" for="name">Nome</label><br>
                 <input type="text" placeholder="Nome" name="name" required>
                 <br>
                 <label id="campo" for="lastname">Sobrenome</label><br>
                 <input type="text" placeholder="Sobrenome" name="lastname" required>
                 <br>
+                <label id="campo" for="password">Senha</label><br>
+                <input type="text" placeholder="Senha" name="password" required>
+                <br>
                 <label id="campo" for="email">E-mail</label> <br>
                 <input type="email" placeholder="e-mail" required>
                 <br>
                 <label id="campo" for="nascimento">Nascimento</label><br>
                 <input type="date" placeholder="Data de Nascimento" required>
-                <br>
-                <label id="campo" for="runtype">Selecione sua(s) provas Favorita</label><br>
-                <input type="checkbox">
-                <label id="campo" for="check">5Km</label>
-                <input type="checkbox">
-                <label id="campo" for="check">10Km</label>
-                <input type="checkbox">
-                <label id="campo" for="check">21Km</label>
-                <input type="checkbox">
-                <label id="campo" for="check">42Km</label>
                 <br><br>
-                <button type="submit"> Correr! </button>
+                <button type="submit"> Cadastrar </button>
                 <button type="reset"> Reset </button>
-                <br><br>
-                
+                <br><br>   
             </div>
             <br>
-
         </form>
     </div>
 

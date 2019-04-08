@@ -3,7 +3,7 @@
       xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
     <head>
         <title>Login RunAway </title>
-     <link rel="stylesheet" th:href="@{style.css}" />
+     <link rel="stylesheet" th:href="@{css/style.css}" />
     </head>
     
     <body>
@@ -17,7 +17,7 @@
         <form th:action="@{/login}" method="post">
         <div class="login">
        <br>
-               <img src="Logo.jpg" id="lgo" >
+               <img src="img/Logo.jpg" id="lgo" >
                 <br>
                 <h1>RunAway</h1>
                 <br><br>
@@ -28,6 +28,7 @@
             <br><br>
             <div><input type="submit" value="Entrar"/></div>
             <br><br>
+            <a th:href="register">Cadastrar</a>
             </div>
         </form>
         </div>
