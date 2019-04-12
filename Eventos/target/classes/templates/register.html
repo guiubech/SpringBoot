@@ -1,6 +1,5 @@
  <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns:th="https://www.thymeleaf.org">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" th:href="@{css/style.css}" />
@@ -23,7 +22,7 @@
 
             <div class="cadastro">
                 <label id="campo" for="username">Usuário</label><br>
-                <input type="text" placeholder="Usuário" required>
+                <input type="text" placeholder="Usuário" th:field="*(login)" required>
                 <br>
                 <label id="campo" for="name">Nome</label><br>
                 <input type="text" placeholder="Nome"  required>
