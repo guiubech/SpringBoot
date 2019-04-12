@@ -5,6 +5,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.DisabledException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.eventos.entity.Usuario;
@@ -29,6 +30,13 @@ public class UsuarioService implements UserDetailsService {
 			throw new DisabledException("Usuário não está ativo no sistema!");
 
 		return new UsuarioSecurityModel(usuario);
+	}
+	
+	public void salvarUsuario(Usuario usuario) {
+		usuario.setAtivo(true);
+		usuario.setSenha(new BCryptPasswordEncoder().encode(usuario.getSenha()));
+		this.usuarioRepository.save(usuario);
+	
 	}
 	
 	

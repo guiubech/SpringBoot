@@ -47,82 +47,106 @@ public class Usuario {
 	private String sobre;
 	private String status;
 	
-	private String dataNesc;
-	
-	
+	private String dataNasc;
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNome() {
 		return nome;
 	}
+
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+
 	public String getSobrenome() {
 		return sobrenome;
 	}
+
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
+
 	public String getLogin() {
 		return login;
 	}
+
 	public void setLogin(String login) {
 		this.login = login;
 	}
+
 	public String getSenha() {
 		return senha;
 	}
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+
 	public boolean isAtivo() {
 		return ativo;
 	}
+
 	public void setAtivo(boolean ativo) {
 		this.ativo = ativo;
 	}
+
 	public Perfil getPerfil() {
 		return perfil;
 	}
+
 	public void setPerfil(Perfil perfil) {
 		this.perfil = perfil;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public Endereco getEndereco() {
 		return endereco;
 	}
+
 	public void setEndereco(Endereco endereco) {
 		this.endereco = endereco;
 	}
+
 	public String getSobre() {
 		return sobre;
 	}
+
 	public void setSobre(String sobre) {
 		this.sobre = sobre;
 	}
+
 	public String getStatus() {
 		return status;
 	}
+
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public String getDataNesc() {
-		return dataNesc;
+
+	public String getDataNasc() {
+		return dataNasc;
 	}
-	public void setDataNesc(String dataNesc) {
-		this.dataNesc = dataNesc;
+
+	public void setDataNasc(String dataNasc) {
+		this.dataNasc = dataNasc;
 	}
 	
+	
+
 	
 	
 	

@@ -30,7 +30,7 @@ public class PostContructInit {
     	usuario.setSenha(new BCryptPasswordEncoder().encode("123"));
     	usuario.setEmail("guiubech@hotmail.com");
     	usuario.setSobrenome("Bechuate");
-    	usuario.setDataNesc("08/03/1989");
+    	usuario.setDataNasc("08/03/1989");
     	usuarioRepository.save(usuario);
     	
     	
