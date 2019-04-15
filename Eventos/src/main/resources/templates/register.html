@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+     xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" th:href="@{/css/style.css}" />
@@ -39,12 +39,15 @@
                 <label id="campo" for="nascimento">Nascimento</label><br>
                 <input type="date" placeholder="Data de Nascimento" th:field="*{dataNasc}" required>
                 <br>
-                <label id="campo" for="perfil">Perfil</label><br>
+                
+       			<label id="campo" for="perfil">Perfil</label><br>
                 <input type="text" placeholder="ADMIN ou USER" th:field="*{perfil}" required>
+    			
                 </div>
+                <br>
                 <button type="submit"> Correr! </button>
                 <button type="reset"> Reset </button>
-                <br><br>
+                
                 
             
             <br>

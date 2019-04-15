@@ -8,6 +8,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
+import com.eventos.entity.Perfil;
 import com.eventos.entity.Usuario;
 import com.eventos.model.UsuarioSecurityModel;
 import com.eventos.repository.UsuarioRepository;
@@ -34,6 +35,13 @@ public class UsuarioService implements UserDetailsService {
 	
 	public void salvarUsuario(Usuario usuario) {
 		usuario.setAtivo(true);
+		
+		if(usuario.getPerfil()==null) {
+			Perfil perfil = Perfil.USER;
+			usuario.setPerfil(perfil);
+			
+		}
+		
 		usuario.setSenha(new BCryptPasswordEncoder().encode(usuario.getSenha()));
 		this.usuarioRepository.save(usuario);
 	
