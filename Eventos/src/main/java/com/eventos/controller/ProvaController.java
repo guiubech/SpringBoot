@@ -25,8 +25,8 @@ public class ProvaController {
 	
 	@PostMapping("/provas")
 	public ModelAndView provas(TipoEvento tipoEvento, RedirectAttributes redirectAttrs) {
-		ModelAndView model = new ModelAndView("/");
-		model.addObject("CadastroSucessi", tipoEvento.getNomeProva()+ " Cadastro com Sucesso");
+		ModelAndView model = new ModelAndView("/provas");
+		model.addObject("cadastroSucesso", tipoEvento.getNomeProva()+ " Cadastro com Sucesso");
 		tipoEventoService.save(tipoEvento);
 		return model;
 	}

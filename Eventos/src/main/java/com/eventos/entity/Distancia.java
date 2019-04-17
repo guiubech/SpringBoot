@@ -1,6 +1,6 @@
 package com.eventos.entity;
 
-public enum Prova {
+public enum Distancia {
 	
 	CINCO, DEZ, VINTE, QUARENTA;
 

@@ -15,6 +15,9 @@
         <a href="about">Sobre RunAway</a>
         <a href="calendario">Calendário </a>
         <a href="inscricao">Inscrição</a>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="provas">Cadastro de Provas</a>
+        </div>
         <a href="login">Logout</a>
     </div>
     <div class="leftbar"></div>

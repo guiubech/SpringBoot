@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
     <head>
         <title>Login RunAway </title>
      <link rel="stylesheet" th:href="@{css/style.css}" />
@@ -25,7 +25,11 @@
             <br><br>
             <div><label> Senha: <br> <input type="password" name="password"/> </label></div>
             <br>
-            <br><br>
+            <br>
+            <div th:if="${cadastroSucesso != null}">
+            	<span th:text="${cadastroSucesso}" ></span>	
+            </div>
+            <br>
             <div><input type="submit" value="Entrar"/></div>
             <br><br>
             <a th:href="@{/register}">Cadastre-se</a>

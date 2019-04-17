@@ -22,9 +22,10 @@ public class TipoEvento {
 	@NotBlank
 	private String nomeProva;
 	@Enumerated(EnumType.STRING)
-	private Prova prova;
+	private Distancia distancia;
 	@Enumerated(EnumType.STRING)
 	private Hora hora;
+	
 	public Long getId() {
 		return id;
 	}
@@ -37,11 +38,11 @@ public class TipoEvento {
 	public void setNomeProva(String nomeProva) {
 		this.nomeProva = nomeProva;
 	}
-	public Prova getProva() {
-		return prova;
+	public Distancia getDistancia() {
+		return distancia;
 	}
-	public void setProva(Prova prova) {
-		this.prova = prova;
+	public void setDistancia(Distancia distancia) {
+		this.distancia = distancia;
 	}
 	public Hora getHora() {
 		return hora;
@@ -49,6 +50,9 @@ public class TipoEvento {
 	public void setHora(Hora hora) {
 		this.hora = hora;
 	}
+	
+	
+	
 	
 	
 	

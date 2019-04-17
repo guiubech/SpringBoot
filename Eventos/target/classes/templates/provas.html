@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+     xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+</head>
+
+<body>
+    
+    <div class="sidenav">
+       <img src="img/logo.jpg" id="logo"/>
+        <a href="home">Run Away</a> 
+        <a href="about">Sobre RunAway</a>
+        <a href="calendario">Calendário </a>
+        <a href="inscricao">Inscrição</a>
+        <a href="login">Logout</a>
+    </div>
+    <div class="leftbar"></div>
+    
+    <!-- Aqui é a página principal -->
+
+    <div class="main">
+       <form method="post" th:action="@{/provas}" th:object="${tipoEvento}">
+
+            <div class="cadastro">
+                <label id="campo" for="nomeProva">Nome da Prova</label><br>
+                <input type="text" placeholder="NomeDaProva" th:field="*{nomeProva}" required>
+                <br>
+                <label id="campo" for="DistanciaProva">Distancia da Prova</label><br>
+                <select name="distancia">
+                	<option th:value="CINCO" th:text="5KM"></option>
+                </select>
+                <br>
+                <label id="campo" for="horarioProva">Horario da prova</label><br>
+                <select name="hora">
+                	<option th:value="MANHA" th:text="Manha"></option>
+                </select>
+                <br>
+                <br>
+                </div>
+                <div th:if="${cadastroSucesso != null}">
+            	<span th:text="${cadastroSucesso}"></span>	
+            	</div>
+                <br>
+                <button type="submit"> Correr! </button>
+                <button type="reset"> Reset </button>
+                
+                
+            
+            <br>
+
+        </form>
+    </div>
+
+</body>
+</html> 
