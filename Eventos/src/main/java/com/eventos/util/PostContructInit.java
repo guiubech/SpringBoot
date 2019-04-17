@@ -26,7 +26,7 @@ public class PostContructInit {
     	usuario.setAtivo(true);
     	usuario.setLogin("admin");
     	usuario.setNome("Guilherme");
-    	usuario.setPerfil(Perfil.ADMIN);
+    	usuario.setPerfil(Perfil.ROLE_ADMIN);
     	usuario.setSenha(new BCryptPasswordEncoder().encode("123"));
     	usuario.setEmail("guiubech@hotmail.com");
     	usuario.setSobrenome("Bechuate");

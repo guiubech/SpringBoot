@@ -39,10 +39,10 @@
                 <label id="campo" for="nascimento">Nascimento</label><br>
                 <input type="date" placeholder="Data de Nascimento" th:field="*{dataNasc}" required>
                 <br>
-                
+                <div sec:authorize="hasRole('ROLE_ADMIN')">
        			<label id="campo" for="perfil">Perfil</label><br>
                 <input type="text" placeholder="ADMIN ou USER" th:field="*{perfil}" required>
-    			
+    			</div>
                 </div>
                 <br>
                 <button type="submit"> Correr! </button>

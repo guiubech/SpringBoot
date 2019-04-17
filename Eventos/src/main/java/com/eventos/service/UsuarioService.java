@@ -37,7 +37,7 @@ public class UsuarioService implements UserDetailsService {
 		usuario.setAtivo(true);
 		
 		if(usuario.getPerfil()==null) {
-			Perfil perfil = Perfil.USER;
+			Perfil perfil = Perfil.ROLE_USER;
 			usuario.setPerfil(perfil);
 			
 		}

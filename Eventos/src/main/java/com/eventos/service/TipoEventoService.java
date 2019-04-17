@@ -12,8 +12,8 @@ public class TipoEventoService {
 	@Autowired
 	private TipoEventoRepository tipoEventoRepository;
 	
-	public void save(TipoEvento tipo) {
-		this.tipoEventoRepository.save(tipo);
+	public void save(TipoEvento prova) {
+		this.tipoEventoRepository.save(prova);
 	}
 	
 	public Iterable<TipoEvento> findAll() {
