@@ -1,5 +1,7 @@
 package com.eventos.entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -25,7 +27,7 @@ public class TipoEvento {
 	private Distancia distancia;
 	@Enumerated(EnumType.STRING)
 	private Hora hora;
-	
+	private Date dataProva;
 	public Long getId() {
 		return id;
 	}
@@ -50,6 +52,14 @@ public class TipoEvento {
 	public void setHora(Hora hora) {
 		this.hora = hora;
 	}
+	public Date getDataProva() {
+		return dataProva;
+	}
+	public void setDataProva(Date dataProva) {
+		this.dataProva = dataProva;
+	}
+	
+	
 	
 	
 	

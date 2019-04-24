@@ -1,5 +1,7 @@
 package com.eventos.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -18,6 +20,12 @@ public class TipoEventoService {
 	
 	public Iterable<TipoEvento> findAll() {
 		return this.tipoEventoRepository.findAll();
+	}
+	
+	public List<TipoEvento> listarProvas() {
+		List <TipoEvento> listarProvas = (List<TipoEvento>) tipoEventoRepository.findAll();
+		return listarProvas;
+		
 	}
 
 }

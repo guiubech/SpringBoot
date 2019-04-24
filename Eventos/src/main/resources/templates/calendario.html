@@ -12,14 +12,18 @@
 <body>
 
 	<div class="sidenav">
-		<img src="img/logo.jpg" id="logo"/>
+        <img src="img/logo.jpg" id="logo"/>
         <a href="home">Run Away</a> 
         <a href="about">Sobre RunAway</a>
         <a href="calendario">Calendário </a>
         <a href="inscricao">Inscrição</a>
-        <a href="login">Logout</a>
-	</div>
-	<div class="leftbar"></div>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="provas">Cadastro de Provas</a>
+        <a href="register">Cadastro de Usuario</a>
+        </div>
+        <a th:href="@{/logout}">Logout</a>
+    </div>
+    <div class="leftbar"></div>
 
 	<!-- Aqui é a página principal -->
 

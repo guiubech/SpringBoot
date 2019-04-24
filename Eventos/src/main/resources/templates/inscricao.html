@@ -1,50 +1,49 @@
- <!DOCTYPE html>
-<html xmlns:th="https://www.thymeleaf.org">
-      
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" th:href="@{css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
 </head>
 
 <body>
     
-    <div class="sidenav">
-       <img src="img/logo.jpg" id="logo"/>
+   <div class="sidenav">
+        <img src="img/logo.jpg" id="logo"/>
         <a href="home">Run Away</a> 
         <a href="about">Sobre RunAway</a>
         <a href="calendario">Calendário </a>
         <a href="inscricao">Inscrição</a>
-        <a href="login">Logout</a>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="provas">Cadastro de Provas</a>
+        <a href="register">Cadastro de Usuario</a>
+        </div>
+        <a th:href="@{/logout}">Logout</a>
     </div>
     <div class="leftbar"></div>
+    
+    </div>
     
     <!-- Aqui é a página principal -->
 
     <div class="main">
-       <form method="get" action="final.html">
+      <form method="post" th:action="@{/inscricao}" th:object="${inscricao}">
 
             <div class="cadastro">
-                <label id="campo" for="name">Nome</label><br>
-                <input type="text" placeholder="Nome" required>
-                <br>
-                <label id="campo" for="lastname">Sobrenome</label><br>
-                <input type="text" placeholder="Sobrenome" name="lastname" required>
-                <br>
-                <label id="campo" for="email">E-mail</label> <br>
-                <input type="email" placeholder="e-mail" required>
-                <br>
-                <label id="campo" for="nascimento">Nascimento</label><br>
-                <input type="date" placeholder="Data de Nascimento" required>
-                <br>
-                <label id="campo" for="runtype">Selecione sua(s) provas Favorita</label><br>
-                <input type="checkbox">
+                
+                <label for="selectProvas" class="bmd-label-floating">Prova</label>
+				<select class="form-control" name="tipoEvento" >
+				<option th:each="prova : ${tipoEvento}" th:value="${prova.id}" th:text="${prova.nomeProva}">Selecione sua Prova</option>
+				</select>
+                
+                <!-- <input type="checkbox">
                 <label id="campo" for="check">5Km</label>
                 <input type="checkbox">
                 <label id="campo" for="check">10Km</label>
                 <input type="checkbox">
                 <label id="campo" for="check">21Km</label>
                 <input type="checkbox">
-                <label id="campo" for="check">42Km</label>
+                <label id="campo" for="check">42Km</label> -->
                 <br><br>
                 <button type="submit"> Correr! </button>
                 <button type="reset"> Reset </button>

@@ -39,11 +39,25 @@
                 <label id="campo" for="nascimento">Nascimento</label><br>
                 <input type="date" placeholder="Data de Nascimento" th:field="*{dataNasc}" required>
                 <br>
+                <input type="checkbox" name="cincoK" th:checked="${cincoK}" />
+                <label id="campo" for="check">5Km</label>
+                <input type="checkbox" name="dezK" th:checked="${dezK}" />
+                <label id="campo" for="check">10Km</label>
+                <input type="checkbox" name="vinteumK" th:checked="${vinteumK}" />
+                <label id="campo" for="check">21Km</label>
+                <input type="checkbox" name="quarentaK" th:checked="${quarentaK}" />
+                <label id="campo" for="check">42Km</label>
+                <br>
                 <div sec:authorize="hasRole('ROLE_ADMIN')">
-       			<label id="campo" for="perfil">Perfil</label><br>
-                <input type="text" placeholder="ADMIN ou USER" th:field="*{perfil}" required>
-    			</div>
+                <label id="campo" for="role">Perfil</label>
+				<select class="form-control" name="perfil">
+				<option th:value="ROLE_ADMIN" th:text="Admin"/>
+				<option th:value="ROLE_USER" th:text="User"/>
+				</select>
                 </div>
+                    
+    			</div>
+                
                 <br>
                 <button type="submit"> Correr! </button>
                 <button type="reset"> Reset </button>
@@ -51,7 +65,7 @@
                 
             
             <br>
-
+		
         </form>
     </div>
 

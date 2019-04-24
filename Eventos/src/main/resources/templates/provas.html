@@ -8,13 +8,17 @@
 
 <body>
     
-    <div class="sidenav">
-       <img src="img/logo.jpg" id="logo"/>
+   <div class="sidenav">
+        <img src="img/logo.jpg" id="logo"/>
         <a href="home">Run Away</a> 
         <a href="about">Sobre RunAway</a>
         <a href="calendario">Calendário </a>
         <a href="inscricao">Inscrição</a>
-        <a href="login">Logout</a>
+        <div sec:authorize="hasRole('ROLE_ADMIN')">
+        <a href="provas">Cadastro de Provas</a>
+        <a href="register">Cadastro de Usuario</a>
+        </div>
+        <a th:href="@{/logout}">Logout</a>
     </div>
     <div class="leftbar"></div>
     
@@ -27,14 +31,22 @@
                 <label id="campo" for="nomeProva">Nome da Prova</label><br>
                 <input type="text" placeholder="NomeDaProva" th:field="*{nomeProva}" required>
                 <br>
+                <label id="campo" for="dataProva">Data da Prova</label><br>
+                <input type="date" placeholder="Data da prova" th:field="*{dataProva}" required>
+                <br>
                 <label id="campo" for="DistanciaProva">Distancia da Prova</label><br>
                 <select name="distancia">
                 	<option th:value="CINCO" th:text="5KM"></option>
+                	<option th:value="DEZ" th:text="10KM"></option>
+                	<option th:value="VINTE" th:text="21KM"></option>
+                	<option th:value="QUARENTA" th:text="42KM"></option>
                 </select>
                 <br>
                 <label id="campo" for="horarioProva">Horario da prova</label><br>
                 <select name="hora">
                 	<option th:value="MANHA" th:text="Manha"></option>
+                	<option th:value="TARDE" th:text="Tarde"></option>
+                	<option th:value="NOITE" th:text="Noite"></option>
                 </select>
                 <br>
                 <br>
